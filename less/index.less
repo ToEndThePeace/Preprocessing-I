@@ -1,4 +1,4 @@
-// Is this working?
+/* #region  CSS Reset */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -47,13 +47,119 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-/* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 62.5%;
 }
-
 html, body {
     height: 100%;
 }
+/* #endregion CSS Reset */
 
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:800|Roboto&display=swap');
+
+
+//Variables
+@accent1: #000;
+@accent2: #eee;
+@accent3: #000;
+@title-font: 'Open Sans', sans-serif;
+@body-font: 'Roboto', sans-serif;
+
+//General Styling
+body {
+	font-family: @body-font;
+}
+h1, h2, h3, h4, h5, h6, .title {
+	font-family: @title-font;
+	font-size: 2rem;
+}
+h1 {
+	font-size: 3rem;
+}
+
+
+//General layout
+body {
+	display: flex;
+	flex-direction: column;
+}
+header, footer {
+	flex-shrink: 0;
+}
+.container {
+	width: 90%;
+	margin: 0 auto;
+	flex: 1 0 auto;
+}
+
+//Header Styling
+header {
+	height: 10vh;
+	background: @accent2;
+
+	.container {
+		display: flex;
+		justify-content: center;
+		height: 100%;
+	
+		nav {
+			width: 50%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+	
+			a {
+				color: @accent1;
+				text-decoration: none;
+	
+				&:hover {
+					text-shadow: 0 0 1px @accent1;
+				}//End a:hover
+			}//End a
+		}//End nav
+	}//End .container
+}//End header
+
+//Splash styling
+.splash {
+	padding: 20px;
+	background-color: #ccc;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	text-align: right;
+
+	h1, h2 {
+		margin-bottom: 10px;
+	}
+	p {
+		line-height: 1.5rem;
+	}
+	.selfie {
+		max-width: 30%;
+		margin-left: 20px;
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
+
+
+
+//Footer styling
+footer {
+	width: 100%;
+	background-color: @accent2;
+	padding: 20px 0;
+	font-size: .8rem;
+
+	.container {
+		text-align: center;
+	}
+}

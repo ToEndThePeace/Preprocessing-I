@@ -1,1 +1,236 @@
-/* Compile your LESS file! */
+/* #region  CSS Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+html,
+body {
+  height: 100%;
+}
+/* #endregion CSS Reset */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'), url(https://fonts.gstatic.com/s/opensans/v17/mem5YaGs126MiZpBA-UN8rsOUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+}
+h1 {
+  font-size: 3rem;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+header,
+footer {
+  flex-shrink: 0;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  flex: 1 0 auto;
+}
+header {
+  height: 10vh;
+  background: #eee;
+}
+header .container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+header .container nav {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header .container nav a {
+  color: #000;
+  text-decoration: none;
+}
+header .container nav a:hover {
+  text-shadow: 0 0 1px #000;
+}
+.splash {
+  padding: 20px;
+  background-color: #ccc;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  text-align: right;
+}
+.splash h1,
+.splash h2 {
+  margin-bottom: 10px;
+}
+.splash p {
+  line-height: 1.5rem;
+}
+.splash .selfie {
+  max-width: 30%;
+  margin-left: 20px;
+}
+.splash .selfie img {
+  width: 100%;
+}
+footer {
+  width: 100%;
+  background-color: #eee;
+  padding: 20px 0;
+  font-size: 0.8rem;
+}
+footer .container {
+  text-align: center;
+}
