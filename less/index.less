@@ -80,7 +80,7 @@ h1 {
 }
 
 
-//General layout
+//General layout including sticky footer/header
 body {
 	display: flex;
 	flex-direction: column;
@@ -131,25 +131,52 @@ header {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-end;
+	align-items: stretch;
 	text-align: right;
 
-	h1, h2 {
-		margin-bottom: 10px;
-	}
-	p {
-		line-height: 1.5rem;
-	}
+	.info {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-around;
+
+		h1, h2 {
+			margin-bottom: 10px;
+		}//End h1, h2
+
+		p {
+			line-height: 1.5rem;
+		}//End p
+
+		a {
+			border: 1px solid #000;
+			padding: 8px 15px;
+			background-color: #eee;
+			color: #000;
+			text-decoration: none;
+
+			&:hover {
+				background-color: #ddd;
+			}//End a:hover
+		}//End a
+	}//End .info
+	
 	.selfie {
 		max-width: 30%;
 		margin-left: 20px;
 
 		img {
 			width: 100%;
-		}
-	}
+			border-radius: 50%;
+		}//End img
+	}//End .selfie
+}//End .splash
+
+//Sections styling
+.spaced {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
 }
-
-
 
 
 //Footer styling
