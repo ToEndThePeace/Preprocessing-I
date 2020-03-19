@@ -120,7 +120,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -145,13 +145,21 @@ body {
 }
 @font-face {
   font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v20/KFOjCnqEu92Fr1Mu51TLBCc6CsE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: #e1f4f3;
 }
 h1,
 h2,
@@ -160,7 +168,7 @@ h4,
 h5,
 h6,
 .title {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 2rem;
 }
 h1 {
@@ -170,89 +178,261 @@ body {
   display: flex;
   flex-direction: column;
 }
+.spaced {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+@media (max-width: 500px) {
+  .spaced {
+    flex-flow: column nowrap;
+  }
+}
 header,
 footer {
   flex-shrink: 0;
+  background: #333;
+}
+@media (max-width: 500px) {
+  header,
+  footer {
+    box-shadow: 0 0 5px #706c61;
+    border: 1px solid #706c61;
+    z-index: 2;
+  }
+}
+@media (max-width: 500px) and (max-width: 500px) {
+  header,
+  footer {
+    border-width: 0;
+  }
 }
 .container {
   width: 90%;
   margin: 0 auto;
   flex: 1 0 auto;
 }
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+}
 header {
   height: 10vh;
-  background: #eee;
 }
 header .container {
   display: flex;
   justify-content: center;
   height: 100%;
 }
+@media (max-width: 500px) {
+  header .container {
+    justify-content: stretch;
+  }
+}
 header .container nav {
-  width: 50%;
+  margin-left: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 800px) {
+  header .container nav {
+    margin: 0 auto;
+    justify-content: space-around;
+    width: 100%;
+  }
+}
 header .container nav a {
-  color: #000;
+  margin-left: 30px;
+  color: #e1f4f3;
   text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+@media (max-width: 500px) {
+  header .container nav a {
+    margin-left: 0;
+  }
 }
 header .container nav a:hover {
-  text-shadow: 0 0 1px #000;
+  text-decoration: underline;
 }
 .splash {
-  padding: 20px;
-  background-color: #ccc;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  box-shadow: 0 0 5px #706c61;
+  border: 1px solid #706c61;
+  z-index: 2;
+  padding: 30px;
+  background-color: #fff;
+  margin: 20px 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: stretch;
   text-align: right;
 }
+@media (max-width: 500px) {
+  .splash {
+    border-width: 0;
+  }
+}
+@media (max-width: 600px) {
+  .splash {
+    border-top: none;
+    margin-top: 0;
+    flex-flow: column-reverse nowrap;
+    align-items: center;
+    text-align: center;
+    padding: 15px 10px 30px;
+  }
+}
 .splash .info {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
 }
-.splash .info h1,
-.splash .info h2 {
-  margin-bottom: 10px;
+.splash .info h1 {
+  margin-bottom: 5px;
+}
+@media (max-width: 500px) {
+  .splash .info h1 {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 500px) {
+  .splash .info h2 {
+    font-size: 1.5rem;
+  }
 }
 .splash .info p {
   line-height: 1.5rem;
+  margin: 10px 0 25px;
+}
+@media (max-width: 500px) {
+  .splash .info p {
+    font-size: 0.9rem;
+  }
 }
 .splash .info a {
-  border: 1px solid #000;
+  border: 1px solid #333;
   padding: 8px 15px;
-  background-color: #eee;
-  color: #000;
+  color: #333;
   text-decoration: none;
+  margin-left: 20px;
+}
+@media (max-width: 500px) {
+  .splash .info a {
+    padding: 3px;
+    border-width: 0 0 1px;
+    margin: 0;
+  }
+  .splash .info a:last-child {
+    margin-left: 10px;
+  }
 }
 .splash .info a:hover {
-  background-color: #ddd;
+  background-color: #e1f4f3;
 }
 .splash .selfie {
-  max-width: 30%;
+  max-width: 22.5%;
   margin-left: 20px;
+}
+@media (max-width: 800px) {
+  .splash .selfie {
+    max-width: 40%;
+    margin: 0 0 10px 20px;
+  }
 }
 .splash .selfie img {
   width: 100%;
   border-radius: 50%;
+  box-shadow: 0 0 5px #706c61;
+  border: 1px solid #706c61;
+  z-index: 2;
 }
-.spaced {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
+@media (max-width: 500px) {
+  .splash .selfie img {
+    border-width: 0;
+  }
+}
+@media (max-width: 500px) {
+  .splash .selfie img {
+    border-width: 1px;
+    box-shadow: 0 0 5px #706c61;
+  }
+}
+.content {
+  margin-bottom: 30px;
+}
+.content h2 {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto 25px;
+  padding: 20px 0 10px;
+  border-bottom: 1px solid #333;
+}
+.content .spaced {
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.content .spaced .card {
+  box-shadow: 0 0 5px #706c61;
+  border: 1px solid #706c61;
+  z-index: 2;
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+@media (max-width: 500px) {
+  .content .spaced .card {
+    border-width: 0;
+  }
+}
+@media (min-width: 500) {
+  .content .spaced .card {
+    width: 100%;
+  }
+}
+@media (min-width: 800px) {
+  .content .spaced .card.col-1-2 {
+    width: 48%;
+  }
+  .content .spaced .card.col-1-3 {
+    width: 30%;
+  }
+}
+.content .spaced .card h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.content .spaced .card h3:before {
+  content: "- ";
+}
+.content .spaced .card h3:after {
+  content: " -";
+}
+.content .spaced .card p {
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+}
+@media (min-width: 800px) {
+  .content .spaced .card:only-child {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 footer {
   width: 100%;
-  background-color: #eee;
   padding: 20px 0;
   font-size: 0.8rem;
 }
 footer .container {
   text-align: center;
+}
+footer p {
+  color: #e1f4f3;
 }
